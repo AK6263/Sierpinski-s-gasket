@@ -5,6 +5,7 @@
 """
 
 import turtle
+import math
 import random
 a=turtle.Turtle()
 wn =turtle.Screen()
@@ -19,11 +20,11 @@ x,y = [0.0,216.51,-216.51],[250.0,-125.0,-125.0]
 def ranpt(b,c):
     a = random.randint(0,2)
     p,q = int(x[a]),int(y[a])
-    b = (b + p)*0.5
+    b = (b+p)*0.5
     c = (c + q)*0.5
     return b,c
     
-def st():
+def start():
     for i,j in zip(x,y):
         a.up()
         a.goto(i,j)
@@ -35,10 +36,11 @@ def st():
     while i<10000:
         a.up()
         a.goto(d1,d2)
-        print(d1,d2)
+        #print(d1,d2)
         d1,d2 = ranpt(d1,d2)
         a.down()
-        a.dot(size=5) 
+        a.dot(size=2.5) 
         i+=1
 
-st()
+if __name__ == "__main__":
+    start()
